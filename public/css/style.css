@@ -1,0 +1,55 @@
+body{
+  margin: 0px;
+  font-family: "Lucida Console", Monaco, monospace;
+  height: 100%;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+h1{
+  text-align: center;
+  font-size: 1.5em;
+}
+p{
+  text-align: center;
+}
+#header {
+  background-color: #01243B;
+  margin-left:0px;
+
+}
+#name{
+  color: #9DA7B2;
+  text-align: center;
+  font-size: 2.5em;
+  padding-top: .2em;
+  margin-bottom: .1em;
+  margin-top: 0px;
+}
+#subDesc{
+  color: #9DA7B2;
+  text-align: center;
+  margin-top: .5em;
+  padding-bottom: 1em;
+}
+#sideBar{
+  color: #01243B;
+  position: fixed;
+  line-height: 2;
+  width: 10em;
+  min-height: 100%;
+  text-align: center;
+  border-right-color: #01243B;
+  border-right-style: solid;
+  border-right-width: .1em;
+}
+#pageContent{
+  position: relative;
+  margin-left: 10em;
+  margin-right: 10em;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 80%;
+
+}

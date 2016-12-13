@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PageController@home');
+Route::get('/resume', 'PageController@home');
+Route::get('/portfolio', 'PageController@portfolio');
+Route::get('/book_review', 'PageController@BookReview');
+Route::get('/about', 'PageController@about');
+Route::get('/contact', 'PageController@contact');
