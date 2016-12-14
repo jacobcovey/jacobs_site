@@ -12,12 +12,13 @@ h1{
   font-size: 1.5em;
 }
 p{
-  text-align: center;
+  display: inline;
 }
 #header {
   background-color: #01243B;
   margin-left:0px;
-
+  text-align: center;
+  padding: -bottom: 2em;
 }
 #name{
   color: #9DA7B2;
@@ -28,10 +29,11 @@ p{
   margin-top: 0px;
 }
 #subDesc{
+  min-width: 100%;
   color: #9DA7B2;
   text-align: center;
   margin-top: .5em;
-  padding-bottom: 1em;
+  padding-bottom: 2em;
 }
 #sideBar{
   color: #01243B;
