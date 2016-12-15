@@ -19,6 +19,7 @@ p{
   margin-left:0px;
   text-align: center;
   padding: -bottom: 2em;
+  margin-bottom: 5px;
 }
 #name{
   color: #9DA7B2;
@@ -53,5 +54,30 @@ p{
   padding-left: 1em;
   padding-right: 1em;
   width: 80%;
+}
+#portfolioItemContainer {
+  border-bottom-color: #01243B;
+  border-bottom-style: solid;
+  border-bottom-width: .1em;
+  padding: .5em;
+
+}
+#portfolio_Pic{
+  display: inline-block;
+  border: 2px solid #9DA7B2;
+  border-radius: 8px;
+  max-width: 20%;
+  height: auto;
+}
+#Portfolio_information{
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+
+}
+#portfolio_title{
+
+}
+#portfolio_dateRange{
 
 }

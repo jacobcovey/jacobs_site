@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use DB;
 use App\Resume;
 use App\ResumeEntry;
+use App\Link;
+use App\DateRange;
+use App\PortfolioItem;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -40,7 +43,31 @@ class PageController extends Controller
     return view('resume_page', compact('resume'));
   }
   public function portfolio(){
-    return view('portfolio_page');
+    $items = DB::table('portfolio_items')->get();
+    $rawLinks = DB::table('portfolio_links')->get();
+    $rawTechnologies = DB::table('portfolio_technologies')->get();
+    $portfolioItems = array();
+    foreach ($items as $item) {
+      $links = array();
+      $technologies = array();
+      foreach ($rawLinks as $rawlink){
+        if ($rawlink->item_id == $item->id){
+          $link = new Link($rawlink->type,$rawlink->link);
+          array_push($links, $link);
+        }
+      }
+      foreach($rawTechnologies as $rawTech){
+        if($rawTech->item_id == $item->id){
+          array_push($technologies, $rawTech->title);
+        }
+      }
+      $dateRange = new DateRange($item->startYear, $item->startMonth, $item->endYear, $item->endMonth);
+      $portfolioItem = new PortfolioItem($item->title,$item->imgPath,$dateRange,$technologies,$links,$item->descripton,$item->title);
+      $portfolioItems = array_values($portfolioItems);
+      array_push($portfolioItems,$portfolioItem);
+    }
+    usort($portfolioItems, array("App\PortfolioItem","cmp_obj"));
+    return view('portfolio_page', compact('portfolioItems'));
   }
   public function BookReview(){
     return view('book_review_page');
