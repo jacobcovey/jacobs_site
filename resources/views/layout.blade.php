@@ -14,7 +14,7 @@ and open the template in the editor.
     <body>
       <div id="header">
         <h1 id="name">Jacob P. Covey</h1>
-        <p id="subDesc"> Problem Solver | Coder | Learner | Personal Finance Geek </p>
+        <p id="subDesc"> Problem Solver | Programmer | Student of Life </p>
       </div>
       <div id="sideBar">
         <a href="/resume"> @yield('Resume') </a><br>
@@ -22,9 +22,23 @@ and open the template in the editor.
         <a href="/book_review"> @yield('BookReview') </a><br>
         <a href="/about"> @yield('About') </a><br>
         <a href="/contact"> @yield('Contact') </a><br>
+        <a href="https://www.linkedin.com/pub/jacob-covey/99/788/653" target="_blank" style="text-decoration:none;">
+        <span style="font: 80% Arial,sans-serif;">
+        <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="21" height="15.75" alt="View Jacob Covey's LinkedIn profile" style="vertical-align:middle;" border="0">&nbsp;View profile</span></a>
+        <br>
+        <a href="https://github.com/jacobcovey" target="_blank">
+        <span style="font: 80% Arial,sans-serif;">
+          <img src="\img\GitHub-Mark-32px.png" width="20" height="20" alt="View Jacob Covey's Github profile" style="vertical-align:middle;" border="0">&nbsp;View profile</span></a>
+
       </div>
       <div id="pageContent">
       @yield('content')
+      <!-- <a href="https://www.linkedin.com/pub/jacob-covey/99/788/653" target="_blank" style="text-decoration:none;">
+      <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+      <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="21" height="15.75" alt="View Jacob Covey's LinkedIn profile" style="vertical-align:middle;" border="0">&nbsp;View profile</span></a>
+      <a href="https://github.com/jacobcovey" target="_blank">
+      <span style="font: 80% Arial,sans-serif;">
+        <img src="\img\GitHub-Mark-32px.png" width="20" height="20" alt="View Jacob Covey's Github profile" style="vertical-align:middle;" border="0">&nbsp;View profile</span></a> -->
     </div>
     </body>
 </html>

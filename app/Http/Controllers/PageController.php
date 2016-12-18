@@ -8,11 +8,56 @@ use App\ResumeEntry;
 use App\Link;
 use App\DateRange;
 use App\PortfolioItem;
+use App\BookReview;
+use App\BookReviewSort;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
   public function home(){
+    $resume = self::loadResumeModelClasses();
+    return view('resume_page', compact('resume'));
+  }
+  public function portfolio(){
+    $portfolioItems = self::loadPortfolioModelClasses();
+    usort($portfolioItems, array("App\PortfolioItem","cmp_obj"));
+    return view('portfolio_page', compact('portfolioItems'));
+  }
+  public function BookReview(){
+    $bookReviews = self::loadBookReviewModelClass();
+    usort($bookReviews, array("App\BookReview","compareByRate"));
+    return view('book_review_page', compact('bookReviews'));
+  }
+  public function BookReviewRating(){
+    $bookReviews = self::loadBookReviewModelClass();
+    usort($bookReviews, array("App\BookReview","compareByRate"));
+    $sorting = new BookReviewSort();
+    $sorting->setRatingValueToSelected();
+    return view('book_review_page', compact('bookReviews'),compact('sorting'));
+  }
+  public function BookReviewDate(){
+    $bookReviews = self::loadBookReviewModelClass();
+    usort($bookReviews, array("App\BookReview","compareByDate"));
+    $sorting = new BookReviewSort();
+    $sorting->setDateValueToSelected();
+    return view('book_review_page', compact('bookReviews'),compact('sorting'));
+  }
+  public function BookReviewAuthor(){
+    $bookReviews = self::loadBookReviewModelClass();
+    usort($bookReviews, array("App\BookReview","compareByAuthor"));
+    $sorting = new BookReviewSort();
+    $sorting->setAuthorValueToSelected();
+    return view('book_review_page', compact('bookReviews'),compact('sorting'));
+  }
+  public function about(){
+    return view('about_page');
+  }
+  public function contact(){
+    return view('contact_page');
+  }
+
+
+  public static function loadResumeModelClasses(){
     $resume = new Resume();
     $skills = DB::table('skills_and_intrest')->get();
     $entries = DB::table('resume_entry')->get();
@@ -39,10 +84,10 @@ class PageController extends Controller
           $resume->AddToVolunteer($currentEntry);
         }
     }
-
-    return view('resume_page', compact('resume'));
+    return $resume;
   }
-  public function portfolio(){
+
+  public static function loadPortfolioModelClasses(){
     $items = DB::table('portfolio_items')->get();
     $rawLinks = DB::table('portfolio_links')->get();
     $rawTechnologies = DB::table('portfolio_technologies')->get();
@@ -66,16 +111,17 @@ class PageController extends Controller
       $portfolioItems = array_values($portfolioItems);
       array_push($portfolioItems,$portfolioItem);
     }
-    usort($portfolioItems, array("App\PortfolioItem","cmp_obj"));
-    return view('portfolio_page', compact('portfolioItems'));
+    return $portfolioItems;
   }
-  public function BookReview(){
-    return view('book_review_page');
-  }
-  public function about(){
-    return view('about_page');
-  }
-  public function contact(){
-    return view('contact_page');
+
+  public static function loadBookReviewModelClass(){
+    $reviews = DB::table('book_reviews')->get();
+    $bookReviews = array();
+    foreach($reviews as $review){
+      $bookReview = new BookReview($review->title,$review->authorFirstName,$review->authorLastName,$review->rating,$review->month,
+                                    $review->year,$review->link,$review->review,$review->imgPath,$review->genre);
+      array_push($bookReviews,$bookReview);
+    }
+    return $bookReviews;
   }
 }

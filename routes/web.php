@@ -14,6 +14,9 @@
 Route::get('/', 'PageController@home');
 Route::get('/resume', 'PageController@home');
 Route::get('/portfolio', 'PageController@portfolio');
-Route::get('/book_review', 'PageController@BookReview');
+Route::get('/book_review', 'PageController@BookReviewRating');
+Route::get('/book_review/rating', 'PageController@BookReviewRating');
+Route::get('/book_review/date', 'PageController@BookReviewDate');
+Route::get('/book_review/author', 'PageController@BookReviewAuthor');
 Route::get('/about', 'PageController@about');
 Route::get('/contact', 'PageController@contact');

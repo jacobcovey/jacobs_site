@@ -8,11 +8,22 @@ a{
   color: inherit;
 }
 h1{
-  text-align: center;
   font-size: 1.5em;
+  color: #5288DB;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 1.5em;
+}
+h1:first-child{
+  margin-top: .5em;
+
 }
 p{
   display: inline;
+}
+ul{
+  margin-top: 0em;
+  padding-left: 1.2em;
 }
 #header {
   background-color: #01243B;
@@ -55,6 +66,18 @@ p{
   padding-right: 1em;
   width: 80%;
 }
+.resume_containers{
+  padding-top: 0px;
+  border-top-color: #01243B;
+  border-top-style: solid;
+  border-top-width: .1em;
+}
+#resume_orginization{
+  font-weight: 900;
+}
+#resume_position{
+  font-style: italic;
+}
 #portfolioItemContainer {
   border-bottom-color: #01243B;
   border-bottom-style: solid;
@@ -76,8 +99,113 @@ p{
 
 }
 #portfolio_title{
+  font-size: 2em;
+  font-weight: bold;
 
 }
-#portfolio_dateRange{
+#portfolio_links{
+  color: #5288DB;
 
+}
+
+#bookReviewItemContainer {
+  /*border-bottom-color: #01243B;
+  border-bottom-style: solid;
+  border-bottom-width: .1em;*/
+  padding: .5em;
+  padding-bottom: 2em;
+}
+#book_review_pic{
+  border: 2px solid #9DA7B2;
+  border-radius: 8px;
+  max-width: 15%;
+  height: auto;
+}
+
+#book_review_information{
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 70%;
+
+}
+#book_review_title{
+  font-weight: bold;
+  font-size: 2em;
+  color: #5288DB;
+}
+#book_review_author{
+  font-size: 1.3em;
+}
+#book_review_sort{
+  border: 2px solid #5288DB;
+  border-radius: 8px;
+  background-color: #5288DB;
+  color: white;
+}
+#book_review_ratingAndDate{
+
+
+}
+#book_review_review{
+
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+  vertical-align: center;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: .8em;
+  width: .8em;
+  left: 1px;
+  bottom: 1.8px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #5288DB;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #5288DB;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

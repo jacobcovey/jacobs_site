@@ -8,13 +8,12 @@
 
 @section('content')
 <h1> EDUCATION </h1>
-<div id="education">
+<div class="resume_containers">
   @foreach ($resume->getEducationArray() as $entry)
     <div>
-      <p id="orginization"> {{ $entry->getOrganization() }} </p><br>
-      <p id="position"> {{ $entry->getPosition() }}:</p>
-      <p id="start_date"> {{ $entry->getStartDate() }} - </p>
-      <p id="end_date"> {{ $entry->getEndDate() }}</p><br>
+      <p id="resume_orginization">{{ $entry->getOrganization()}}</p><br>
+      <p id="resume_position"> {{ $entry->getPosition() }}:</p>
+      <p id="resume_date"> {{ $entry->getStartDate() }} - {{ $entry->getEndDate() }}</p><br>
       <ul>
       @foreach ($entry->getBullets() as $bullet)
         <li>{{$bullet}}</li>
@@ -25,13 +24,12 @@
 
 </div>
 <h1> EXPERIENCE </h1>
-<div id="experience">
+<div class="resume_containers">
   @foreach ($resume->getExperincesArray() as $entry)
     <div>
-      <p id="orginization"> {{ $entry->getOrganization() }} </p><br>
-      <p id="position"> {{ $entry->getPosition() }}:</p>
-      <p id="start_date"> {{ $entry->getStartDate() }} - </p>
-      <p id="end_date"> {{ $entry->getEndDate() }}</p><br>
+      <p id="resume_orginization"> {{ $entry->getOrganization() }} </p><br>
+      <p id="resume_position"> {{ $entry->getPosition() }}:</p>
+      <p id="resume_date"> {{ $entry->getStartDate() }} - {{ $entry->getEndDate() }}</p><br>
       <ul>
       @foreach ($entry->getBullets() as $bullet)
         <li>{{$bullet}}</li>
@@ -41,13 +39,12 @@
   @endforeach
 </div>
 <h1> VOLUNTEER SERVICE </h1>
-<div id="volunteerService">
+<div class="resume_containers">
   @foreach ($resume->getVolunteerArray() as $entry)
     <div>
-      <p id="orginization"> {{ $entry->getOrganization() }} </p><br>
-      <p id="position"> {{ $entry->getPosition() }}:</p>
-      <p id="start_date"> {{ $entry->getStartDate() }} - </p>
-      <p id="end_date"> {{ $entry->getEndDate() }}</p><br>
+      <p id="resume_orginization"> {{ $entry->getOrganization() }} </p><br>
+      <p id="resume_position"> {{ $entry->getPosition() }}:</p>
+      <p id="resume_date"> {{ $entry->getStartDate() }} - {{ $entry->getEndDate() }}</p><br>
       <ul>
       @foreach ($entry->getBullets() as $bullet)
         <li>{{$bullet}}</li>
@@ -57,7 +54,7 @@
   @endforeach
 </div>
 <h1> SKILLS & INTRESTS </h1>
-<div id="SkillsAndIntrests">
+<div class="resume_containers">
   <ul>
   @foreach ($resume->getSkillsAndIntrestsArray() as $skills)
     <li>{{$skills}}</li>
