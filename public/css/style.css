@@ -2,6 +2,8 @@ body{
   margin: 0px;
   font-family: "Lucida Console", Monaco, monospace;
   height: 100%;
+  /*background-color: #d21c65;*/
+
 }
 a{
   text-decoration: none;
@@ -53,6 +55,7 @@ ul{
   line-height: 2;
   width: 10em;
   min-height: 100%;
+  max-width: 12%;
   text-align: center;
   border-right-color: #01243B;
   border-right-style: solid;
@@ -134,6 +137,20 @@ ul{
   font-size: 2em;
   color: #5288DB;
 }
+.titles{
+  font-weight: bold;
+  font-size: 2em;
+  color: #01243B;
+  /*margin-left: 3em;*/
+}
+#aboutText{
+  line-height: 1.5em;
+}
+#aboutContent{
+  position: relative;
+  float: left;
+  max-width: 55%;
+}
 #book_review_author{
   font-size: 1.3em;
 }
@@ -149,6 +166,14 @@ ul{
 }
 #book_review_review{
 
+}
+#jacob_casual{
+  position: relative;
+  float: right;
+  align-items: baseline;
+  max-width: 20%;
+  height: auto;
+  margin-right: 14em
 }
 /* The switch - the box around the slider */
 .switch {

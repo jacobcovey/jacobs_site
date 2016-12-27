@@ -15,18 +15,18 @@ use App\Filter;
 Sort By: <a href="/book_review/rating"><p id="{{$sorting->getRatingValue()}}">Rateing</p></a>&emsp;
 <a href="/book_review/date"><p id="{{$sorting->getDateValue()}}">Date Read</p></a> &emsp;
 <a href="/book_review/author"><p id="{{$sorting->getAuthorValue()}}">Author</p></a><br>
-Filters: Non-Fiction<label class="switch">
-  <input id="nonFictionFilter" type="checkbox" {{$filters->getNonfictionStatus()}}> <div class="slider round"></div>
+<!-- Filters: Non-Fiction<label class="switch">
+  <input id="nonFictionFilter" type="checkbox" onchange="changeNonfiction();" {{$filters->getNonfictionStatus()}}> <div class="slider round"></div>
   </label>
 Fiction<label class="switch">
-  <input id="FictionFilter" type="checkbox" {{$filters->getFictionStatus()}}> <div class="slider round"></div>
+  <input id="FictionFilter" type="checkbox" onchange="changeFiction();" {{$filters->getFictionStatus()}}> <div class="slider round"></div>
   </label>
 Biographical<label class="switch">
-  <input id="biographicalFilter" type="checkbox" {{$filters->getBiographicalStatus()}}> <div class="slider round"></div>
+  <input id="biographicalFilter" type="checkbox" onchange="changeBiographical();" {{$filters->getBiographicalStatus()}}> <div class="slider round"></div>
   </label>
 Sci-fi<label class="switch">
-  <input id="scifiFilter" type="checkbox" {{$filters->getScifiStatus()}}> <div class="slider round"></div>
-  </label>
+  <input id="scifiFilter" type="checkbox" onchange="changeSciFi();" {{$filters->getScifiStatus()}}> <div class="slider round"></div>
+  </label> -->
   @foreach ($bookReviews as $bookReview)
   @if($bookReview->isIncluded($filters))
   <div id="bookReviewItemContainer">
