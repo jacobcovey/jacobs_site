@@ -3,7 +3,7 @@
 @section('Resume') <font color="#5288DB">Resume</font> @stop
 @section('Portfolio') Portfolio @stop
 @section('BookReview') Book Review @stop
-@section('About') About @stop
+@section('About') Welcome @stop
 @section('Contact') Contact @stop
 
 @section('content')

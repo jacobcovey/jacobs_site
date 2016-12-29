@@ -6,7 +6,7 @@ use App\Filter;
 @section('Resume') Resume @stop
 @section('Portfolio') Portfolio @stop
 @section('BookReview') <font color="#5288DB">Book Review</font> @stop
-@section('About') About @stop
+@section('About') Welcome @stop
 @section('Contact') Contact @stop
 
 @section('content')

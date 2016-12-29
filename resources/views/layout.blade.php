@@ -9,8 +9,8 @@ and open the template in the editor.
     <head>
       <meta charset="utf-8">
       <title>@yield('pageTitle')</title>
-      <link rel = "stylesheet" href="/css/style.css">
-      <script type = "text/javascript" src="{{('js/bookreview.js')}}"></script>
+      <link rel = "stylesheet" href="css/style.css">
+      <script type = "text/javascript" src="{{('public/js/bookreview.js')}}"></script>
     </head>
     <body>
       <div id="header">
@@ -18,10 +18,10 @@ and open the template in the editor.
         <p id="subDesc"> Problem Solver | Programmer | Student of Life </p>
       </div>
       <div id="sideBar">
+        <a href="/about"> @yield('About') </a><br>
         <a href="/resume"> @yield('Resume') </a><br>
         <a href="/portfolio"> @yield('Portfolio') </a><br>
         <a href="/book_review"> @yield('BookReview') </a><br>
-        <a href="/about"> @yield('About') </a><br>
         <a href="/contact"> @yield('Contact') </a><br>
         <a href="https://www.linkedin.com/pub/jacob-covey/99/788/653" target="_blank" style="text-decoration:none;">
         <span style="font: 80% Arial,sans-serif;">
